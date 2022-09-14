@@ -20,7 +20,7 @@ class Chess
   end
 
   def build_board_of_nodes
-      
+
   end
 
   def within_board?(coordinates)
