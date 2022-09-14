@@ -1,13 +1,28 @@
 require_relative 'chess'
 require 'byebug'
 
+class Node
+
+  attr_accessor :coordinates, :childrens
+
+  def initialize(coordinates, childrens)
+    @coordinates = coordinates
+    @childrens = childrens
+  end
+end
 class Knight < Chess
-  attr_accessor :position, :all_moves_available
+  attr_accessor :position, :all_moves_available, :tree_of_moves, :board_of_nodes
   
   def initialize(position)
+    @tree_of_moves = build_tree_of_moves
     @@board = build_board
     within_board?(position) ? @position = position : position = nil
   end
+
+  def build_tree_of_moves
+  end    
+
+
 
   def knight_moves(coordinates, destination)
     return nil unless within_board?(coordinates) || within_board?(destination)    

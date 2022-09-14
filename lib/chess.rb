@@ -1,9 +1,11 @@
 class Chess
   
   @@board = []
+  @@board_of_nodes = []
 
   def initialize
     @@board = build_board
+    @@board_of_nodes = build_board_of_nodes
   end
 
   def build_board
@@ -15,6 +17,10 @@ class Chess
       end
     end
     ar
+  end
+
+  def build_board_of_nodes
+      
   end
 
   def within_board?(coordinates)

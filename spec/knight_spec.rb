@@ -23,4 +23,7 @@ RSpec.describe Knight do
       end
     end
   end
+
+  describe "#build_board_of_nodes" do
+    
 end
