@@ -1,3 +1,5 @@
+require_relative 'node'
+
 class Chess
   
   @@board = []
@@ -20,7 +22,13 @@ class Chess
   end
 
   def build_board_of_nodes
+    ar = []
 
+    @@board.each do |square|
+      ar << Node.new(square, [])
+    end
+    byebug
+    ar
   end
 
   def within_board?(coordinates)
