@@ -22,6 +22,11 @@ RSpec.describe Chess do
         expect(Chess.new.within_board?([-1,4])).to be false
       end
     end
+    context 'given [0, 0]' do
+      it 'returns true' do
+        expect(Chess.new.within_board?([0,0])).to be false
+      end
+    end
   end
 
   describe "#build_board" do

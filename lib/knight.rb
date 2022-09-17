@@ -10,11 +10,10 @@ class Knight < Chess
   end
 
   def knight_moves(coordinates, destination)
-    return nil unless within_board?(coordinates) || within_board?(destination)    
+    return nil unless within_board?(coordinates) && within_board?(destination)    
     queue_of_moves = []
     queue_of_moves << coordinates
     path_to_destination_raw = breadth_first_search(queue_of_moves, destination)
-    byebug
     path_to_destination_nice = path_to_destination_processing(path_to_destination_raw)
   end
   
@@ -29,7 +28,6 @@ class Knight < Chess
       raw_path.shift
       path_to_return << ar
     end
-    byebug
     path_to_return.reverse
   end
 

@@ -27,7 +27,6 @@ class Chess
     @@board.each do |square|
       ar << Node.new(square, [])
     end
-    byebug
     ar
   end
 
